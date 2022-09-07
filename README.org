@@ -1,14 +1,15 @@
 #+TITLE: A Haskell Implementation of PPAP, by Pikotaro
 
-This Haskell package implements the logic underlying Pikatoro's PPAP (Pen Pineapple Apple Pen) 2016 video, illustrating the following Haskell concepts:
+This Haskell package implements the logic underlying Pikatoro's PPAP (Pen Pineapple Apple Pen) 2016 video. The code uses the following Haskell concepts:
 - algebraic datatypes
 - composition via Semigroup
 - automatic derivation into Eq, Ord, and Show typeclasses
+- explicit instantiation into the Semigroup typeclass
 - filtering a list using list comprehensions
 - pattern matches
 - pattern guards
 - user-defined infix operator functions
-- use of Prettyprinter
+- use of Prettyprinter and instantation into Pretty
 - the IO monad
 
 #+html: <iframe width="560" height="315" src="https://www.youtube.com/embed/Ct6BUPvE2sM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
