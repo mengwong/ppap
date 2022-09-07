@@ -1,0 +1,44 @@
+#+TITLE: A Haskell Implementation of PPAP, by Pikotaro
+
+This Haskell package implements the logic underlying Pikatoro's PPAP (Pen Pineapple Apple Pen) 2016 video, illustrating the following Haskell concepts:
+- algebraic datatypes
+- composition via Semigroup
+- automatic derivation into Eq, Ord, and Show typeclasses
+- filtering a list using list comprehensions
+- pattern matches
+- pattern guards
+- user-defined infix operator functions
+- use of Prettyprinter
+- the IO monad
+
+We consider the original performance to be an illustration of an
+equivalence relation between binary trees constructed using repeated
+monoidal append of elements from a many-sorted domain.
+
+The key binary operation visibly demonstrated in the song is the pair
+-- which we model in Haskell using monoidal append, written ~mappend~
+or ~(<>)~, pronounced, according to the song, "unh". The song provides
+copious illustrations of that operation, in two main acts.
+
+Each act first pairs single elements into doubles. Then it further
+pairs the doubles into a quad. It will be evident to the attentive
+reader that the binary tree is the appropriate data structure to
+represent the song's semantics.
+
+The two acts are structurally identical, but choose different
+combinations of starting elements. Both acts repeatedly compose the
+same input elements to a top-level root; after two rounds of
+composition, the tree root contains $n^2=4$ leaves. However, each act
+chooses different permutations of the leaf elements, providing
+different preimages to the equivalence relation.
+
+Determining equivalence between the root nodes is facilitated by a
+serialization function which maps multiple permutations of input
+elements to the same equivalence class by re-ordering the input
+elements.
+
+This transformation incidentally shows that the pairing relation is
+really a special (binary) case of the more general ~mconcat~ function,
+of unlimited arity.
+
+https://www.youtube.com/watch?v=Ct6BUPvE2sM
