@@ -42,3 +42,27 @@ really a special (binary) case of the more general ~mconcat~ function,
 of unlimited arity.
 
 https://www.youtube.com/watch?v=Ct6BUPvE2sM
+
+* Build and Installation
+
+#+begin_src shell
+  stack run
+#+end_src
+
+* Example Output
+
+#+begin_example
+  I have a Pen; I have an Apple ... unh: Apple-Pen!
+  I have a Pen; I have Pineapple ... unh: Pineapple-Pen!
+  Apple-Pen; Pineapple-Pen ... unh: Pen-Pineapple-Apple-Pen!
+  Pen-Pineapple-Apple-Pen.
+
+  (dance time)
+
+  I have a Pen; I have a Pen ... unh: Long Pen!
+  I have an Apple; I have Pineapple ... unh: Apple-Pineapple!
+  Long Pen; Apple-Pineapple ... unh: Pen-Pineapple-Apple-Pen!
+  Pen-Pineapple-Apple-Pen.
+
+  Pikotaro!
+#+end_example
