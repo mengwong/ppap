@@ -11,6 +11,8 @@ This Haskell package implements the logic underlying Pikatoro's PPAP (Pen Pineap
 - use of Prettyprinter
 - the IO monad
 
+#+html: <iframe width="560" height="315" src="https://www.youtube.com/embed/Ct6BUPvE2sM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 We consider the original performance to be an illustration of an
 equivalence relation between binary trees constructed using repeated
 monoidal append of elements from a many-sorted domain.
