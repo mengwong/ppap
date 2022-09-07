@@ -11,14 +11,14 @@ data PPAP = Apple
           | Pen
           deriving (Eq, Ord, Show)
 
-newtype Multi = S [PPAP]
+newtype Multi = M [PPAP]
   deriving (Eq)
 
 iHave :: PPAP -> Multi
-iHave p = S [p]
+iHave p = M [p]
 
 instance Semigroup Multi where
-  (<>) (S p1) (S p2) = S (sort (p1 ++ p2))
+  (<>) (M p1) (M p2) = M (sort (p1 ++ p2))
 
 unh :: (Semigroup a, Pretty a) => a -> a -> IO a
 unh x y = do
@@ -28,15 +28,18 @@ unh x y = do
 infixl 7 `unh`
 
 instance Pretty Multi where
-  pretty (S [x])                 = "I have" <+> pretty x
-  pretty (S [Pen, Pen])          = "Long Pen"
-  pretty (S p)
+  pretty (M [x])                 = "I have" <+> pretty x
+  pretty (M [Pen, Pen])          = "Long Pen"
+  pretty (M p)
     | length (filter (== Pen) p) == 2 = dash [ viaShow Pen
-                                             , pretty (S [ notp
+                                             , pretty (M [ notp
                                                          | notp <- reverse p
                                                          , notp /= Pen])
                                              , viaShow Pen ]
     | otherwise                       = dash (viaShow <$> p)
+  where
+    dash :: [Doc ann] -> Doc ann
+    dash = encloseSep "" "" "-"
 
 instance Pretty PPAP where
   pretty p = hsep $ determiner p ++ [ viaShow p ]
@@ -44,10 +47,6 @@ instance Pretty PPAP where
       determiner Apple     = ["an"]
       determiner Pen       = ["a" ]
       determiner Pineapple = [    ]
-
-
-dash :: [Doc ann] -> Doc ann
-dash = encloseSep "" "" "-"
 
 prt :: (Pretty a) => a -> Doc ann
 prt = pretty
