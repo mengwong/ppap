@@ -37,9 +37,9 @@ instance Pretty Multi where
                                                          , notp /= Pen])
                                              , viaShow Pen ]
     | otherwise                       = dash (viaShow <$> p)
-  where
-    dash :: [Doc ann] -> Doc ann
-    dash = encloseSep "" "" "-"
+    where
+      dash :: [Doc ann] -> Doc ann
+      dash = encloseSep "" "" "-"
 
 instance Pretty PPAP where
   pretty p = hsep $ determiner p ++ [ viaShow p ]
