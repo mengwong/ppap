@@ -25,7 +25,7 @@ pairs the doubles into a quad. It will no doubt have occurred to the
 attentive reader that a binary tree is an appropriate data structure
 to represent the song's semantics, at least initially.
 
-[[images/flowchart.png]]
+#+html: <p align="center"><img src="https://github.com/mengwong/ppap/blob/main/images/flowchart.png?raw=true" /></p>
 
 The two acts are structurally identical, but choose different
 combinations of starting elements. Both acts repeatedly compose the
