@@ -15,7 +15,7 @@ This Haskell package implements the logic underlying Pikatoro's PPAP (Pen Pineap
 
 We consider the original performance to be an illustration of an
 equivalence relation between binary trees constructed using repeated
-monoidal append of elements from a many-sorted domain.
+monoidal append of elements from a single-sorted domain.
 
 The key binary operation visibly demonstrated in the song is the pair
 -- which we model in Haskell using monoidal append, written ~mappend~
@@ -29,12 +29,12 @@ to represent the song's semantics, at least initially.
 
 #+html: <p align="center"><img src="https://github.com/mengwong/ppap/blob/main/images/flowchart.png?raw=true" /></p>
 
-The two acts are structurally identical, but choose different
-combinations of starting elements. Both acts repeatedly compose the
-same input elements to a top-level root; after two rounds of
-composition, the tree root contains $n^2=4$ leaves. However, each act
-chooses different permutations of the leaf elements, providing
-different preimages to the equivalence relation.
+The two acts are structurally identical, but choose different starting
+elements. Both acts repeatedly compose the same input elements to a
+top-level root; after two rounds of composition, the tree root
+contains $n^2=4$ leaves. However, each act chooses different
+permutations of the leaf elements, providing different preimages to
+the equivalence relation.
 
 Determining equivalence between the root nodes is facilitated by a
 serialization function which maps multiple permutations of input
